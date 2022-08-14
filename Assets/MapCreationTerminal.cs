@@ -29,16 +29,28 @@ public class MapCreationTerminal : MonoBehaviour
     int width = 10;
     int height = 10;
 
-    int boxSize = 960;
+    int boxSize = 0;
+    bool fullscreen;
 
     void Start() {
         widthInput.text = width.ToString();
         heightInput.text = height.ToString();
 
         fileLocationInput.text = fileLocation;
+
+        boxSize = Mathf.RoundToInt(ButtonParent.rectTransform.rect.width) - 80;
+
+        Screen.SetResolution(2560, 1440, true);
     }
 
     void Update() {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    fullscreen = !fullscreen;
+
+        //if (fullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        //else Screen.fullScreenMode = FullScreenMode.Windowed;
+
+
         if (int.Parse(widthInput.text).GetType() == typeof(int))
             width = int.Parse(widthInput.text); 
         
