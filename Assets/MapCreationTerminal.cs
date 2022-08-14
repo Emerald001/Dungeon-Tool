@@ -108,7 +108,7 @@ public class MapCreationTerminal : MonoBehaviour
     }
 
     public void ExportMap() {
-        if(StringName == "") {
+        if(fileName == "") {
             infoText.text = "Please enter a Name";
             return;
         }
