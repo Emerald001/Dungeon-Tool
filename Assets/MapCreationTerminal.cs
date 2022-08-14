@@ -19,8 +19,8 @@ public class MapCreationTerminal : MonoBehaviour
     public TMP_Text infoText;
 
     //Private Vars
-    Dictionary<Vector2Int, bool> clickedtiles = new();
-    List<GameObject> buttons = new();
+    Dictionary<Vector2Int, bool> Clickedtiles = new();
+    List<GameObject> Buttons = new();
 
     string fileLocation = "C:/";
     string fileName = "New Map";
@@ -70,24 +70,24 @@ public class MapCreationTerminal : MonoBehaviour
 
                 button.GetComponent<ButtonInfoHolder>().gridPos = new Vector2Int(x, y);
 
-                buttons.Add(tmp.gameObject);
+                Buttons.Add(tmp.gameObject);
             }
         }
     }
 
     public void CreateGrid() {
-        clickedtiles.Clear();
+        Clickedtiles.Clear();
 
-        while (buttons.Count > 0) {
-            var button = buttons[0].GetComponent<Button>();
+        while (Buttons.Count > 0) {
+            var button = Buttons[0].GetComponent<Button>();
             button.onClick.RemoveAllListeners();
-            Destroy(buttons[0]);
-            buttons.RemoveAt(0);
+            Destroy(Buttons[0]);
+            Buttons.RemoveAt(0);
         }
 
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                clickedtiles.Add(new Vector2Int(x, y), false);
+                Clickedtiles.Add(new Vector2Int(x, y), false);
             }
         }
 
@@ -99,11 +99,11 @@ public class MapCreationTerminal : MonoBehaviour
 
         if (button.image.color == Color.white) {
             button.image.color = Color.gray;
-            clickedtiles[gridpos] = false;
+            Clickedtiles[gridpos] = false;
         }
         else {
             button.image.color = Color.white;
-            clickedtiles[gridpos] = true;
+            Clickedtiles[gridpos] = true;
         }
     }
 
@@ -114,13 +114,13 @@ public class MapCreationTerminal : MonoBehaviour
         }
 
         List<Vector2Int> Map = new();
-        foreach (var item in clickedtiles) {
+        foreach (var item in Clickedtiles) {
             if (item.Value) {
                 Map.Add(item.Key);
             }
         }
 
-        if(Map.Count < 1 || clickedtiles.Count < 1) {
+        if(Map.Count < 1 || Clickedtiles.Count < 1) {
             infoText.text = "Grid Cannot be Empty";
             return;
         }
