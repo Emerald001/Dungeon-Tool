@@ -18,8 +18,8 @@ public class MapCreationTerminal : MonoBehaviour
 
     public TMP_Text infoText;
 
+    //Private Vars
     Dictionary<Vector2Int, bool> clickedtiles = new();
-
     List<GameObject> buttons = new();
 
     string fileLocation = "C:/";
@@ -27,7 +27,6 @@ public class MapCreationTerminal : MonoBehaviour
 
     int width = 10;
     int height = 10;
-
     int boxSize = 0;
 
     void Start() {
