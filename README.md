@@ -11,7 +11,7 @@ It gets saved as a JSON file and is basically just a list of Vector2Int's.</br>
 You can use the generator provided or make a generator yourself that uses a list of gridpositions as it's input.</p>
 </br>
 <h2>Importing via the Generator</h2>
-<p>1. Once you have a map, you can use it in your unity project, add the Generator and MapContainer scripts from the Assets/Scripts folder to your project's Asset folder (or anywhere you want it) and add some walls and floors for the generator.</br>
+<p>1. Once you have a map, you can use it in your unity project, add the Generator and MapContainer scripts from the Assets folder to your project's Asset folder (or anywhere you want it) and add some walls and floors for the generator.</br>
 2. Then add your Json file into your asset folder if you hadn't already.</br>
 3. Once you have added the Generator script to any object, drag in the floor and wall prefabs and the JSON file.</br>
 4. Press play and you will see the dungeon get generated!</br>
