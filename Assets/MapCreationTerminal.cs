@@ -19,18 +19,16 @@ public class MapCreationTerminal : MonoBehaviour
     public TMP_Text infoText;
 
     Dictionary<Vector2Int, bool> clickedtiles = new();
-    //MapContainer source = null;
 
     List<GameObject> buttons = new();
 
     string fileLocation = "C:/";
-    string StringName = "New Map";
+    string fileName = "New Map";
 
     int width = 10;
     int height = 10;
 
     int boxSize = 0;
-    bool fullscreen;
 
     void Start() {
         widthInput.text = width.ToString();
@@ -39,25 +37,16 @@ public class MapCreationTerminal : MonoBehaviour
         fileLocationInput.text = fileLocation;
 
         boxSize = Mathf.RoundToInt(ButtonParent.rectTransform.rect.width) - 80;
-
-        Screen.SetResolution(2560, 1440, true);
     }
 
     void Update() {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //    fullscreen = !fullscreen;
-
-        //if (fullscreen) Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        //else Screen.fullScreenMode = FullScreenMode.Windowed;
-
-
         if (int.Parse(widthInput.text).GetType() == typeof(int))
             width = int.Parse(widthInput.text); 
         
         if (int.Parse(heightInput.text).GetType() == typeof(int))
             height = int.Parse(heightInput.text);
 
-        StringName = nameInput.text;
+        fileName = nameInput.text;
         fileLocation = fileLocationInput.text;
     }
 
@@ -141,7 +130,7 @@ public class MapCreationTerminal : MonoBehaviour
         MapContainer.Map = Map;
 
         string json = JsonUtility.ToJson(MapContainer); 
-        string filename = Path.Combine(fileLocation + StringName + ".json");
+        string filename = Path.Combine(fileLocation + fileName + ".json");
         if (File.Exists(filename)) {
             File.Delete(filename);
         }
