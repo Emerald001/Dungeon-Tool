@@ -7,7 +7,8 @@
 3. Click on any of the tiles on the grid to toggle wether it is walkable or not.</br>
 4. Once you are content with your map, give it a name and press "Export Map" to save it in a specific spot on your pc.</br>
 </br>
-It gets saved as a JSON file and is basically just a list of Vector2Int's, you can use the generator provided or make a generator yourself that uses a list of gridpositions as it's input</p>
+It gets saved as a JSON file and is basically just a list of Vector2Int's.</br>
+You can use the generator provided or make a generator yourself that uses a list of gridpositions as it's input.</p>
 </br>
 <h2>Importing via the Generator</h2>
 <p>1. Once you have a map, you can use it in your unity project, add the Generator and MapContainer scripts from the Assets/Scripts folder to your project's Asset folder (or anywhere you want it) and add some walls and floors for the generator.</br>
